@@ -1,6 +1,6 @@
 # 📚 Book Recommender
 
-Benvenuto nel progetto **Book Recommender**. Questa applicazione è un sistema client-server progettato per la gestione e la raccomandazione di libri, dotata di un'interfaccia grafica moderna.
+Benvenuto nel progetto **Book Recommender**. Questa applicazione è un sistema client-server mediante l utilizzo di Ngrok progettato per la gestione e la raccomandazione di libri.
 
 Il sistema è composto da due moduli principali:
 1.  **Server**: Gestisce la logica di business, le connessioni e l'interazione con il database.

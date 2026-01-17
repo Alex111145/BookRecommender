@@ -1,126 +1,116 @@
-# Book Recommender - Guida all'avvio
+# 📚 Book Recommender
 
-Questa applicazione è composta da due componenti principali:
-1. Un **server** che gestisce il database e le connessioni
-2. Un **client** che fornisce l'interfaccia utente per interagire con il sistema
+Benvenuto nel progetto **Book Recommender**. Questa applicazione è un sistema client-server progettato per la gestione e la raccomandazione di libri, dotata di un'interfaccia grafica moderna.
 
-## Requisiti
+Il sistema è composto da due moduli principali:
+1.  **Server**: Gestisce la logica di business, le connessioni e l'interazione con il database.
+2.  **Client**: Fornisce l'interfaccia utente (UI) per interagire con il sistema.
 
-- **Java 21 o superiore**
-- **Maven** correttamente installato e configurato
-- **JavaFX** (sarà automaticamente utilizzato da Maven)
+---
 
-## Informazione importante
-**L'applicazione è già compilata e pronta all'uso.** Non è necessario ricompilarla prima dell'esecuzione.
+## 📋 Requisiti di Sistema
 
-## Avvio dell'applicazione
+Per eseguire correttamente l'applicazione, assicurati di avere installato:
 
-### Su macOS/Linux
+* **Java 21** (o versione superiore)
+* **Maven** (installato e configurato nel PATH di sistema)
+* **JavaFX** (gestito automaticamente dalle dipendenze Maven)
 
-1. Apri il Terminale e naviga fino alla cartella principale del progetto:
-   ```bash
-   cd /percorso/al/progetto/LAB-B/LAB-B-main
-   ```
+---
 
-2. Rendi eseguibili gli script nella cartella `bin`:
-   ```bash
-   chmod +x bin/start-server.sh bin/start-client.sh
-   ```
+## 🚀 Guida all'Avvio Rapido
 
-3. Avvia il server:
-   ```bash
-   ./bin/start-server.sh
-   ```
+> **Nota Importante**: L'applicazione è fornita **già compilata** e pronta all'uso. Non è necessario eseguire la compilazione manuale prima dell'avvio.
 
-4. In una nuova finestra del Terminale, avvia il client:
-   ```bash
-   ./bin/start-client.sh
-   ```
+### 🍎 Utenti macOS / 🐧 Linux
 
-### Su Windows
+1.  Apri il Terminale e naviga nella cartella principale del progetto:
+    ```bash
+    cd /percorso/al/progetto/BookRecommender/BookRecommender-main
+    ```
 
-1. Apri il Prompt dei comandi (cmd) e naviga fino alla cartella principale del progetto:
-   ```cmd
-   cd C:\percorso\al\progetto\LAB-B\LAB-B-main
-   ```
+2.  Concedi i permessi di esecuzione agli script nella cartella `bin`:
+    ```bash
+    chmod +x bin/start-server.sh bin/start-client.sh
+    ```
 
-2. Avvia il server:
-   ```cmd
-   bin\start-server.bat
-   ```
+3.  **Avvia il Server** (in questa finestra del terminale):
+    ```bash
+    ./bin/start-server.sh
+    ```
 
-3. In una nuova finestra del Prompt dei comandi, avvia il client:
-   ```cmd
-   bin\start-client.bat
-   ```
+4.  Apri una **nuova finestra o scheda del Terminale** e avvia il Client:
+    ```bash
+    ./bin/start-client.sh
+    ```
 
-Alternativamente, puoi avviare gli script direttamente dall'Esplora file facendo doppio clic su di essi.
+### 🪟 Utenti Windows
 
-## Risoluzione dei problemi
+1.  Apri il Prompt dei comandi (`cmd`) o PowerShell e naviga nella cartella del progetto:
+    ```cmd
+    cd C:\percorso\al\progetto\BookRecommender\BookRecommender-main
+    ```
 
-### Problemi comuni su macOS/Linux
+2.  **Avvia il Server**:
+    ```cmd
+    bin\start-server.bat
+    ```
 
-1. **"Permission denied" durante l'esecuzione degli script**
-   - Soluzione: Rendi eseguibili gli script con `chmod +x bin/*.sh`
+3.  Apri una **nuova finestra del Prompt dei comandi** e avvia il Client:
+    ```cmd
+    bin\start-client.bat
+    ```
 
-2. **"mvn: command not found o operation not permitted "**
-   - Soluzione: Assicurati che Maven sia installato
-   - Prova a installare Maven in base al tuo sistema operativo
-     ```bash
-     # Su macOS con Homebrew
-     brew install maven
-     
-     # Su Ubuntu/Debian
-     sudo apt install maven
-     ```
+*Suggerimento: Su Windows è possibile avviare gli script `.bat` anche facendo doppio clic direttamente da Esplora File.*
 
-3. **Problemi di rendering JavaFX**
-   - Soluzione: Gli script sono già configurati per usare il renderer software per migliore compatibilità
+---
 
-### Problemi comuni su Windows
+## 🛠 Risoluzione dei Problemi
 
-1. **"'mvn' non è riconosciuto come comando interno o esterno"**
-   - Soluzione: Assicurati che Maven sia installato e nel PATH
-   - Verifica l'installazione eseguendo `mvn -version` in un Prompt dei comandi
+### macOS / Linux
+* **Errore "Permission denied"**: Assicurati di aver eseguito il comando `chmod +x bin/*.sh` come indicato nella guida.
+* **Errore "mvn: command not found"**: Maven non è installato o non è nel PATH.
+    * *Installazione via Homebrew (macOS)*: `brew install maven`
+    * *Installazione via APT (Ubuntu/Debian)*: `sudo apt install maven`
 
-2. **Problemi di rendering JavaFX**
-   - Soluzione: Gli script sono già configurati per usare il renderer software per migliore compatibilità
+### Windows
+* **Errore "'mvn' non è riconosciuto..."**: Maven non è installato o la variabile d'ambiente PATH non è configurata correttamente. Verifica digitando `mvn -version` nel terminale.
+* **La finestra non si apre**: Controlla il terminale per messaggi di errore e verifica la versione di Java con `java -version` (deve essere 21 o superiore).
 
-3. **La finestra dell'applicazione non si apre**
-   - Soluzione: Controlla il Prompt dei comandi per eventuali messaggi di errore
-   - Verifica di avere Java 21 installato eseguendo `java -version`
+### Note Generali
+* **Problemi di Rendering**: Gli script sono configurati per utilizzare il renderer software (`-Dprism.order=sw`) per garantire la massima compatibilità grafica su tutti i sistemi.
+* **Porte Occupate**: Se il server non parte, assicurati che la porta utilizzata non sia occupata da un altro processo.
 
-### Altre soluzioni
+---
 
-Se l'applicazione non si avvia correttamente:
+## 💻 Stack Tecnologico
 
-1. Verifica che Java 21 sia installato e configurato correttamente
-2. Assicurati che non ci siano altri server in esecuzione sulla stessa porta
-3. Prova a chiudere e riavviare completamente l'applicazione
-4. Se necessario, puoi ricompilare manualmente il progetto con Maven, ma in genere non è necessario poiché l'applicazione è già compilata
+Il progetto è costruito utilizzando le seguenti tecnologie (basato sul file `pom.xml`):
 
-## Struttura del progetto
+* **Linguaggio**: Java 21
+* **Interfaccia Utente**: JavaFX 21.0.2
+* **Gestione Dipendenze**: Maven
+* **Database**:
+    * PostgreSQL (Driver 42.7.1)
+    * H2 Database (In-memory fallback, ver 2.2.224)
+* **Librerie UI Aggiuntive**:
+    * ControlsFX 11.2.1
+    * FormsFX 11.6.0
+    * ValidatorFX 0.5.0
+* **Testing**: JUnit 5.10.2
 
-```
+---
 
-LAB-B-main/
+## 📂 Struttura del Progetto
+
+```text
+BookRecommender-main/
 ├── bin/
-│   ├── start-client.sh    # Script per avviare il client (macOS/Linux)
-│   ├── start-client.bat   # Script per avviare il client (Windows)
-│   ├── start-server.sh    # Script per avviare il server (macOS/Linux)
-│   └── start-server.bat   # Script per avviare il server (Windows)
-├── src/                   # Codice sorgente
-├── target/                # Cartella con i file già compilati
-└── pom.xml                # File di configurazione Maven
-```
-
-## Note tecniche
-
-Gli script di avvio utilizzano Maven per eseguire l'applicazione, con le seguenti opzioni:
-
-- `clean javafx:run`: Pulisce e avvia l'applicazione JavaFX (la fase di pulizia non influisce sul codice compilato esistente)
-- `-Dprism.order=sw`: Forza l'uso del renderer software per migliore compatibilità
-- `-Dmonocle.platform=Headless`: Utilizza una modalità headless quando possibile
-- `-Djavafx.verbose=true`: Abilita il logging dettagliato per la risoluzione dei problemi
-
-Per ulteriori informazioni sul funzionamento dell'applicazione, consultare la documentazione del progetto.
+│   ├── start-client.sh    # Avvio Client (macOS/Linux)
+│   ├── start-client.bat   # Avvio Client (Windows)
+│   ├── start-server.sh    # Avvio Server (macOS/Linux)
+│   └── start-server.bat   # Avvio Server (Windows)
+├── src/                   # Codice sorgente Java e risorse
+├── target/                # Artefatti compilati
+├── db_credentials.properties # Configurazione credenziali DB
+└── pom.xml                # Configurazione Maven e dipendenze
